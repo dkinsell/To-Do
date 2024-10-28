@@ -6,8 +6,8 @@ router.post('/create', toDoController.createToDo);
 
 router.get('/get', toDoController.getToDos);
 
-router.put('/update', toDoController.updateToDo);
+router.put('/update/:id', toDoController.updateToDo);
 
-router.delete('/delete', toDoController.deleteToDo);
+router.delete('/delete/:id', toDoController.deleteToDo);
 
 module.exports = router;
