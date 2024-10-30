@@ -1,13 +1,5 @@
-// import { useState } from 'react'
+import TodoApp from './components/TodoApp';
 
-function App() {
-
-  return (
-    <>
-      <div>
-      </div>
-    </>
-  )
-}
+const App = () => <TodoApp />
 
 export default App
