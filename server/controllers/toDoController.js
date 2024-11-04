@@ -41,7 +41,7 @@ const toDoController = {
     
     try {
       const result = await pool.query(
-        'UPDATE todos SET isCompleted = $1 where id = $1 RETURNING *;',
+        'UPDATE todos SET "isCompleted" = $1 where id = $2 RETURNING *;',
         [isCompleted, id]
       )
 
