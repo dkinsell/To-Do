@@ -8,7 +8,7 @@ app.use(express.json());
 
 const PORT = 8080;
 
-app.use('/', toDoRoutes);
+app.use('/api/todos', toDoRoutes);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error(err.stack); 

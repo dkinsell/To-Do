@@ -3,9 +3,9 @@ import { getTodos, createTodo, updateTodo, deleteTodo } from '../controllers/toD
 
 const router = Router();
 
-router.get('/get', getTodos);
-router.post('/create', createTodo);
-router.put('/update/:id', updateTodo);
-router.delete('/delete/:id', deleteTodo);
+router.get('/', getTodos);
+router.post('/', createTodo);
+router.put('/:id', updateTodo);
+router.delete('/:id', deleteTodo);
 
 export default router;
