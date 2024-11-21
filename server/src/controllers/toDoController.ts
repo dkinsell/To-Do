@@ -23,10 +23,10 @@ export const createTodo = async (req: Request, res: Response, next: NextFunction
 export const updateTodo = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { id } = req.params;
-    const { isCompleted } = req.body;
+    const { completed } = req.body;
     const result = await pool.query(
-      'UPDATE todos SET isCompleted = $1 WHERE id = $2 RETURNING *',
-      [isCompleted, id]
+      'UPDATE todos SET completed = $1 WHERE id = $2 RETURNING *',
+      [completed, id]
     );
     res.json(result.rows[0]);
   } catch (err) {
