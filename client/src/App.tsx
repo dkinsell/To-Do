@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ToDoList from './components/ToDoList';
 
 interface Todo {
   id: number;
@@ -81,26 +82,11 @@ const App = () => {
         <button onClick={createTodo}>Create</button>
       </div>
 
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo.id} style={{ display: "flex", alignItems: "center" }}>
-            <span
-              style={{
-                textDecoration: todo.completed ? "line-through" : "none",
-                marginRight: "10px",
-              }}
-            >
-              {todo.task}
-            </span>
-            <button onClick={() => updateToDo(todo.id, todo.completed)}>
-              {todo.completed ? "Undo" : "Complete"}
-            </button>
-            <button onClick={() => deleteToDo(todo.id)} style={{ marginLeft: "10px" }}>
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
+      <ToDoList 
+        todos={todos}
+        updateToDo={updateToDo}
+        deleteToDo={deleteToDo}
+      />
     </div>
   );
 };
